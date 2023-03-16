@@ -1,0 +1,17 @@
+CREATE TABLE store (id integer primary key, item TEXT, price INTEGER, quantity INTEGER);
+
+INSERT INTO store VALUES
+(1, "shoes", 20, 3),
+(2, "shirts", 15, 5),
+(3, "pants", 21, 7), 
+(4, "bicycle", 200, 4),
+(5, "candy", 2, 100);
+
+-- display the database by price
+SELECT * FROM store ORDER BY price desc;
+
+-- display the database ordered by quantity
+SELECT item, price, quantity FROM store ORDER BY quantity desc; 
+
+-- display the average price of items in the store
+SELECT AVG(price) FROM store; 
