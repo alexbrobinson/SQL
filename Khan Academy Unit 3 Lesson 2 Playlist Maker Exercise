@@ -57,9 +57,13 @@ INSERT INTO songs (artist, title)
 INSERT INTO songs (artist, title)
     VALUES ("Guns N' Roses", "Don't cry");
     
+    
+-- create a playlist with titles from the artist queen
 SELECT title FROM songs WHERE artist = "Queen";
 
+-- create a playlist where the genre of the songs is Pop
 SELECT name FROM artists WHERE genre = 'Pop';
 
+-- select the title of all the songs from the 'Pop' artists.
 SELECT title FROM songs WHERE artist IN (SELECT name FROM artists WHERE genre = 'Pop');
 
