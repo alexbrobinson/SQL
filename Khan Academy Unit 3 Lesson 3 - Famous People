@@ -1,0 +1,64 @@
+/* Create table about the people and what they do here */
+
+
+CREATE TABLE musicians (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    age TEXT,
+    band TEXT);
+
+INSERT into musicians 
+    VALUES (1, "Noah Sebastian", "27", "Bad Omens");
+INSERT into musicians
+    VALUES (2, "Noah Kahan", "25", "Noah Kahan");
+INSERT into musicians
+    VALUES (3, "Hayley Williams", "34", "Paramore");
+INSERT into musicians
+    VALUES (4, "Andrew Hozier-Byrne", "33", "Hozier");
+INSERT into musicians
+    VALUES (5, "Harry Styles", "29", "Harry Styles");
+INSERT into musicians
+    VALUES (6, "Brendon Urie", "35", "Panic! At The Disco");
+    
+CREATE TABLE songs (id INTEGER PRIMARY KEY AUTOINCREMENT,
+    song TEXT,
+    band TEXT);
+INSERT into songs
+    VALUES (1, "Stick Season", "Noah Kahan");
+INSERT into songs
+    VALUES (2, "Everywhere, Everything", "Noah Kahan");
+INSERT into songs
+    VALUES (3, "Come Over", "Noah Kahan");
+INSERT into songs
+    VALUES (4, "Just Pretend", "Bad Omens");
+INSERT into songs
+    VALUES (5, "THE DEATH OF PEACE OF MIND", "Bad Omens");
+INSERT into songs
+    VALUES (6, "This Is Why", "Paramore");
+INSERT into songs
+    VALUES (7, "Misery Business", "Paramore");
+INSERT into songs
+    VALUES (8, "Eat Your Young", "Hozier");
+INSERT into songs
+    VALUES (9, "All Things End", "Hozier");
+INSERT into songs
+    VALUES (10, "Matilda", "Harry Styles");
+INSERT into songs
+    VALUES (11, "Watermelon Sugar", "Harry Styles");
+INSERT into songs
+    VALUES (12, "I Write Sins Not Tragedies", "Panic! At The Disco");
+INSERT into songs
+    VALUES (13, "Dying In LA", "Panic! At The Disco");
+INSERT into songs
+    VALUES (14, "Death of A Bachelor", "Panic! At The Disco");
+
+/* show average age of musicians */
+
+SELECT AVG(age) FROM musicians;
+
+/* show name of musician next to their songs and the band name */
+SELECT m.name, s.song, s.band
+    FROM musicians m 
+    JOIN songs s
+    ON s.band=m.band
+    
+
